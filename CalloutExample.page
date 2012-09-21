@@ -1,0 +1,22 @@
+<apex:page showHeader="true" showChat="false" sidebar="false" controller="CalloutExampleController" tabStyle="Account">
+  <apex:form >
+      Enter account name to get: <apex:inputText value="{!accountName}"/>
+      <apex:commandButton id="getAccount" value="Get Account" action="{!getAccount}" rerender="accountData, pageMessages" />
+  </apex:form>
+  <br/>
+
+  <apex:pageMessages id="pageMessages"/>
+  <apex:pageBlock id="accountData" rendered="{!acct != null}" title="{!acct.Name}">
+      <apex:pageBlockSection columns="1" >
+          <apex:outputField value="{!acct.Name}"/>
+          <apex:outputField value="{!acct.Phone}"/>
+          <apex:outputField value="{!acct.Website}"/>
+      </apex:pageBlockSection>
+      <apex:pageBlockSection title="Contacts">
+      <apex:pageblockTable value="{!acct.Contacts}" var="Contact" >
+          <apex:column value="{!Contact.Name}"/>
+          <apex:column value="{!Contact.Phone}"/>
+      </apex:pageblockTable>
+      </apex:pageBlockSection>
+  </apex:pageblock>
+</apex:page>
