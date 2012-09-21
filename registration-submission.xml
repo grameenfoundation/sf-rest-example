@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data id="a0KE0000001rlvMMAQ">
+	<personal>
+		<firstname>John</firstname>
+		<lastname>Doe</lastname>
+		<dob>1967-09-24</dob>
+	</personal>
+	<contact>
+		<email>jdoe@example.com</email>
+		<phone>555-1234</phone>
+	</contact>
+</data>

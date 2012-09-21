@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<h:html xmlns:jr="http://openrosa.org/javarosa" xmlns:h="http://www.w3.org/1999/xhtml">
+	<h:head>
+		<h:title>Registration</h:title>
+		<model>
+			<instance>
+				<data id="a0KE0000001rlvMMAQ">
+					<personal>
+						<firstname />
+						<lastname />
+						<dob />
+					</personal>
+					<contact>
+						<email />
+						<phone />
+					</contact>
+				</data>
+			</instance>
+			<bind nodeset="/data/personal/firstname" type="string" />
+			<bind nodeset="/data/personal/lastname" type="string" />
+			<bind nodeset="/data/personal/dob" type="date" />
+			<bind nodeset="/data/contact/email" type="string" />
+			<bind nodeset="/data/contact/phone" type="string" />
+		</model>
+	</h:head>
+	<h:body>
+		<group>
+			<label>Personal</label>
+			<input ref="/data/personal/firstname">
+				<label>First Name</label>
+			</input>
+			<input ref="/data/personal/lastname">
+				<label>Last Name</label>
+			</input>
+			<input ref="/data/personal/dob">
+				<label>Birthday</label>
+			</input>
+		</group>
+		<group>
+			<label>Contact</label>
+			<input ref="/data/contact/email">
+				<label>Email</label>
+			</input>
+			<input ref="/data/contact/phone">
+				<label>Phone</label>
+			</input>
+		</group>
+	</h:body>
+</h:html>

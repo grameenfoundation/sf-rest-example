@@ -1,0 +1,5 @@
+{
+	"name" : "Grameen Rocks",
+	"phone" : "333-333-3333",
+	"website" : "www.grameenfoundation.org"
+}

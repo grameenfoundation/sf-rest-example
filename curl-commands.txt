@@ -1,0 +1,26 @@
+# ------------------------
+# STANDARD RESTFUL SERVICE
+# ------------------------
+
+# Get account list
+curl -H "Authorization: Bearer $SESSION_ID" -H "X-PrettyPrint:1" "https://$INSTANCE_NAME.salesforce.com/services/data/v25.0/sobjects/Account"
+
+# SOQL example: select same information from account, as a SOQL query
+curl -H "Authorization: Bearer $SESSION_ID" -H "X-PrettyPrint:1" "https://$INSTANCE_NAME.salesforce.com/services/data/v25.0/query/?q=SELECT+Id,Name,Phone,Website+FROM+Account+WHERE+Id='001d000000BAPii'"
+
+# SOQL example: same, but return in XML
+curl -H "Authorization: Bearer $SESSION_ID" -H "X-PrettyPrint:1" "https://$INSTANCE_NAME.salesforce.com/services/data/v25.0/query/?q=SELECT+Id,Name,Phone,Website+FROM+Account+WHERE+Id='001d000000BAPii'" - H "Accept: application/xml"
+
+# Get information from a given account in XML format using Fields parameter
+curl -H "Authorization: Bearer $SESSION_ID" -H "X-PrettyPrint:1" -H "Accept:application/xml" "https://$INSTANCE_NAME.salesforce.com/services/data/v25.0/sobjects/Account/001d000000BAPii?fields=Id,Name,Phone,Website"
+
+
+# ----------------------
+# CUSTOM RESTFUL SERVICE
+# ----------------------
+
+# Post an account into out restful service
+curl -H "Authorization: Bearer $SESSION_ID" "https://$INSTANCE_NAME.salesforce.com/services/apexrest/Account/" -H "Content-Type: application/json" -d @account.txt
+
+# Get an account from our restful service
+curl -H "Authorization: Bearer $SESSION_ID" "https://$INSTANCE_NAME.salesforce.com/services/apexrest/Account/Grameen+Rocks"
